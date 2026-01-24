@@ -121,6 +121,21 @@ const Navbar: React.FC = () => {
                 <span className="text-2xl font-bold serif text-gray-900">Cart</span>
               </motion.div>
             </div>
+            <div className="mt-auto pt-16 border-t border-gray-100">
+              <button 
+                onClick={() => { setIsOpen(false); setIsCartOpen(true); }}
+                className="relative flex items-center gap-4 p-3 text-gray-900 hover:text-clay transition-all w-full"
+                aria-label={`Shopping cart with ${totalItems} items`}
+              >
+                <ShoppingBag size={24} strokeWidth={2} />
+                <span className="text-2xl font-bold serif text-gray-900">Cart</span>
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-clay text-white text-[10px] flex items-center justify-center rounded-full shadow-sm font-bold">
+                    {totalItems}
+                  </span>
+                )}
+              </button>
+            </div>
             <div className="mt-auto pb-20 border-t border-gray-100 pt-10 flex justify-between items-center">
                <p className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Curated Living</p>
                <div className="flex gap-6">
