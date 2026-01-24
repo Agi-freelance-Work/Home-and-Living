@@ -57,10 +57,12 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="md:hidden flex items-center gap-6">
-            <button onClick={() => setIsCartOpen(true)} className="relative p-2 text-gray-900" aria-label={`Shopping cart with ${totalItems} items`}>
-              <ShoppingBag size={20} />
+            <button onClick={() => setIsCartOpen(true)} className="relative p-3 text-gray-900 hover:text-clay transition-all" aria-label={`Shopping cart with ${totalItems} items}`}>
+              <ShoppingBag size={22} strokeWidth={2} />
               {totalItems > 0 && (
-                <span className="absolute top-1 right-1 w-2 h-2 bg-clay rounded-full shadow-sm" aria-label="Items in cart"></span>
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-clay text-white text-[10px] flex items-center justify-center rounded-full shadow-sm font-bold" aria-label="Items in cart">
+                  {totalItems}
+                </span>
               )}
             </button>
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-900 focus:outline-none" aria-label={isOpen ? "Close menu" : "Open menu"}>
@@ -98,6 +100,26 @@ const Navbar: React.FC = () => {
                   </Link>
                 </motion.div>
               ))}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: NAV_LINKS.length * 0.1 }}
+                className="flex items-center gap-4 mt-8"
+              >
+                <button 
+                  onClick={() => { setIsOpen(false); setIsCartOpen(true); }}
+                  className="relative p-3 text-gray-900 hover:text-clay transition-all"
+                  aria-label={`Shopping cart with ${totalItems} items`}
+                >
+                  <ShoppingBag size={24} strokeWidth={2} />
+                  {totalItems > 0 && (
+                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-clay text-white text-[10px] flex items-center justify-center rounded-full shadow-sm font-bold">
+                      {totalItems}
+                    </span>
+                  )}
+                </button>
+                <span className="text-2xl font-bold serif text-gray-900">Cart</span>
+              </motion.div>
             </div>
             <div className="mt-auto pb-20 border-t border-gray-100 pt-10 flex justify-between items-center">
                <p className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Curated Living</p>
