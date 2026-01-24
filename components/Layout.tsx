@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
             aria-modal="true"
             role="dialog"
           >
-            <div className="flex flex-col space-y-10">
+            <div className="flex flex-col space-y-6">
               {NAV_LINKS.map((link, idx) => (
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -107,7 +107,7 @@ const Navbar: React.FC = () => {
                 >
                   <Link
                     to={link.path}
-                    className="text-6xl font-bold serif text-gray-900 hover:text-clay transition-colors"
+                    className="text-4xl font-bold serif text-gray-900 hover:text-clay transition-colors"
                     onClick={() => setIsOpen(false)}
                     aria-current={location.pathname === link.path ? 'page' : undefined}
                   >
@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
                     </span>
                   )}
                 </button>
-                <span className="text-2xl font-bold serif text-gray-900">Cart</span>
+                <span className="text-xl font-bold serif text-gray-900">Cart</span>
               </motion.div>
             </div>
             <div className="mt-auto pt-16 border-t border-gray-100">
@@ -143,7 +143,7 @@ const Navbar: React.FC = () => {
                 aria-label={`Shopping cart with ${totalItems} items`}
               >
                 <ShoppingBag size={24} strokeWidth={2} />
-                <span className="text-2xl font-bold serif text-gray-900">Cart</span>
+                <span className="text-xl font-bold serif text-gray-900">Cart</span>
                 {totalItems > 0 && (
                   <span className="absolute -top-1 -right-1 w-5 h-5 bg-clay text-white text-[10px] flex items-center justify-center rounded-full shadow-sm font-bold">
                     {totalItems}
