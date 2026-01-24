@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
           
-          <div className="hidden lg:flex items-center space-x-12">
+          <div className="hidden md:flex items-center space-x-12">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.path}
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
             </button>
           </div>
 
-          <div className="lg:hidden flex items-center gap-6">
+          <div className="md:hidden flex items-center gap-6">
             <button onClick={() => setIsCartOpen(true)} className="relative p-3 text-gray-900 hover:text-clay transition-all" aria-label={`Shopping cart with ${totalItems} items}`}>
               <ShoppingBag size={22} strokeWidth={2} />
               {totalItems > 0 && (
@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: '100vh' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white fixed inset-0 z-50 flex flex-col pt-32 px-12"
+            className="md:hidden bg-white fixed inset-0 z-50 flex flex-col pt-32 px-12"
             aria-modal="true"
             role="dialog"
           >
