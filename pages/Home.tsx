@@ -148,10 +148,6 @@ const Home: React.FC = () => {
             <span className="serif italic text-3xl md:text-5xl text-gray-800 leading-tight">
               "Design is a silent ambassador of your brand. In your home, it's the heartbeat of your lifestyle."
             </span>
-            <div className="mt-12 flex flex-col items-center">
-               <div className="w-px h-16 bg-gray-200 mb-6"></div>
-               <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400">The Homiee Manifesto</p>
-            </div>
           </motion.div>
         </section>
 
