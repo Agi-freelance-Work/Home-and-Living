@@ -38,6 +38,12 @@ const Hero: React.FC = () => {
                 <ArrowUpRight size={18} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               </Link>
+              <Link to="/about" className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-clay transition-colors group">
+                <span className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center group-hover:border-clay group-hover:bg-clay/5 transition-all">
+                  <Play size={14} fill="currentColor" />
+                </span>
+                Our Philosophy
+              </Link>
             </div>
           </motion.div>
         </div>
